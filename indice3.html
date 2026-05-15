@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Acceso Oficial</title>
+    <style>
+        body { 
+            background-color: #cccccc; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+
+        /* Esta es tu imagen completa */
+        .contenedor-maestro {
+            background-image: url('fondo.png'); /* Cambia el nombre si tu imagen es .jpg */
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 594px;  /* Ajusta al ancho de tu imagen */
+            height: 718px; /* Ajusta al alto de tu imagen */
+            position: relative; /* Permite posicionar las cosas encima */
+        }
+
+        /* Estilo común para los campos y el botón */
+        .encima {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%); /* Centra los campos horizontalmente */
+            width: 70%;
+            padding: 24px;
+            box-sizing: border-box;
+            font-size: 12px;
+            border-radius: 8px;
+            border: 1px solid #999;
+        }
+
+        /* Efecto al hacer clic en el campo de texto */
+        .encima:focus {
+            outline: 2px solid #42A5F5; /* Cambia el borde a celeste suave y brillante */
+        }
+
+        /* Ubicación de los elementos (ajusta los números 'top' si necesitas subirlos o bajarlos) */
+        #rut { 
+            top: 306px; 
+        }
+
+        #nombre_apellido { 
+            top: 439px; 
+        }
+        
+        .boton { 
+            top: 557px; 
+            background-color: #2196F3; 
+            color: white; 
+            border: none; 
+            cursor: pointer;
+
+            /* Aumentamos el tamaño de la fuente al doble */
+            font-size: 24px;
+            font-weight: bold;
+            
+            padding: 18px; 
+            width: 65%;
+        }
+        
+        /* Efecto sutil al pasar el mouse por encima */
+        .boton:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor-maestro">
+        <input type="text" id="rut" class="encima" placeholder="RUT (ej: 127.119.688-1)">
+        <input type="text" id="nombre_apellido" class="encima">
+        
+        <button class="encima boton" onclick="ir()">Autenticar</button>
+    </div>
+
+    <script>
+        function ir() {
+            var r = document.getElementById('rut').value;
+            var n = document.getElementById('nombre_apellido').value;
+
+            if (r == "" || n == "") { 
+                alert("Por favor, completa todos los datos"); 
+            } else { 
+                // Al estar completos los datos, te dirige al enlace de destino
+                window.location.href = "https://drive.google.com/file/d/13feUwqRLFnCeb1Z_aVNDhH6sA8TkSUJy/view?usp=sharing"; 
+            }
+        }
+    </script>
+
+</body>
+</html>
