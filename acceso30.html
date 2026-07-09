@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Acceso Oficial</title>
+    <style>
+        body { 
+            background-color: #cccccc; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+
+        .contenedor-maestro {
+            background-image: url('fondo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 594px; 
+            height: 718px; 
+            position: relative; 
+        }
+
+        .encima {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            padding: 24px;
+            box-sizing: border-box;
+            font-size: 16px;
+            border-radius: 8px;
+            background-color: white; 
+            border: 1px solid #000000; 
+        }
+
+        .encima:focus {
+            outline: 3px solid #42A5F5;
+        }
+
+        #rut { 
+            top: 306px; 
+        }
+
+        #nombre_apellido { 
+            top: 439px; 
+        }
+        
+        .boton { 
+            top: 557px; 
+            background-color: #2196F3; 
+            color: white; 
+            border: none; 
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 18px; 
+            width: 65%;
+        }
+        
+        .boton:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor-maestro">
+        <input type="text" id="rut" class="encima" placeholder="Ingresa tu RUT">
+        <input type="text" id="nombre_apellido" class="encima" placeholder="Contraseña">
+        
+        <button class="encima boton" onclick="ir()">Autenticar</button>
+    </div>
+
+    <script>
+        function ir() {
+            var r = document.getElementById('rut').value;
+            var n = document.getElementById('nombre_apellido').value;
+
+            if (r == "" || n == "") { 
+                alert("Por favor, completa todos los datos"); 
+            } else { 
+                window.location.href = "https://drive.google.com/file/d/1g5Ci8UvLh1vAQMmKefUzTGgz-A1__WOB/view?usp=sharing"; 
+            }
+        }
+    </script>
+
+</body>
+</html>
